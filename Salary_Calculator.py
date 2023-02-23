@@ -15,14 +15,33 @@ st.selectbox("Area of Interest", ["Adminitration", "Accounting", "Customer Servi
 
 st.selectbox("Major Skill/Software", ["Business Analysis", "Business Development", "Communication", "CRM/Saleforce", "Data Analysis", "Data science", "Digital Marketing", "G-suite", "Economics", "Law", "Microsoft Office", "Writing", "Web Development" "Project Management", "Social Media Management", "Graphic Design"])
 
-st.radio("What is your age range", ["20-25", "26-35", "36-45", "46-60"])
+st.radio("What is your age range", ["18-25", "26-35", "36-45", "46-65"])
 
 st.radio("Identification Type", ["National Identity Card", "International Passport", "Driver's Licence", "Worker's/Resident Permit", "Voter's Card"])
 st.number_input("Please enter your ID Number", step = 1)
 
 st.checkbox("Would you like us to match you with an employer?")
 
+
+st.write('PLEASE NOTE:')
+       
+st.write('For Years of Experience < 3,')
+st.write('Sal = Minwage * YearsofExp * Skillprof')
+    
+st.write('For Years of Experience > 3 <= 8,')
+st.write('Sal = (Minwage*2) * YearsofExp * Skillprof')
+    
+st.write('For Years of Experience > 8 <= 12,')
+st.write('Sal = (Minwage*2.5) * YearsofExp * Skillprof')
+    
+st.write('For Years of Experience > 12 <= 20,')
+st.write('Sal = (Minwage*3) * YearsofExp * Skillprof')
+    
+st.write('For Years of Experience > 20,')
+st.write('Sal = (Minwage*3.5) * YearsofExp * Skillprof')
+
 if st.button("Calculate Salary"):
     Sal = Minwage*YearsofExp*Skillprof
    
     st.write(f'Your Salary Expectation is {Sal}. \n We will verify your information and send you an approval or unverified email within 5 to 10 working days. \n If the information provided is correct, your verification certificate will be uploaded on the National Job Board. \n All the best!')
+             
